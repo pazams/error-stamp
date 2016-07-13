@@ -1,0 +1,33 @@
+{
+  "name": "error-stamp",
+  "version": "0.0.3",
+  "description": "Mutate an Error object to include a stamp of current step",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha test/",
+    "document": "jsdox index.js --output documentation/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pazams/error-stamp.git"
+  },
+  "keywords": [
+    "error",
+    "handling",
+    "stack",
+    "trace",
+    "stamp"
+  ],
+  "author": "Pazams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pazams/error-stamp/issues"
+  },
+  "homepage": "https://github.com/pazams/error-stamp#readme",
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  }
+}
