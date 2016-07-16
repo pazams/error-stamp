@@ -32,8 +32,8 @@ And since the function always return the input, there's a shorter version:
 ```JS
 var stamp = require('error-stamp');
 
-if(stamp(err)) {
-    callback(err);
+if(err) {
+    callback(stamp(err));
     return;
 }   
 ```
@@ -41,7 +41,7 @@ if(stamp(err)) {
 ## Before & After
 
 ### Before using the module
-__node example.js__
+`node examples/example.js`
 ```bash
 /tmp/error-stamp/example.js:40
         throw err;
@@ -54,7 +54,7 @@ Error
 
 
 ### After using the module
-__node example_withstamps.js__
+`node examples/example_withstamps.js`
 ```bash
 /tmp/error-stamp/example_withstamps.js:42
         throw err;
@@ -91,7 +91,7 @@ Sets the error prefix used in each new line added to the trace. Default is "ErrS
 ## Alternatives
 Some other module tackle the same issue, among them:
 - [longjohn](https://github.com/mattinsler/longjohn) does the job, but as it has recommended- not intended on production environment (note it interferes with every asyc execution).
-- [async-stacktrace](https://github.com/Pita/async-stacktrace) has greatly inspired this module, but it does more just adding trace stamps (throw errors, call callbacks and conditionally create Error objects).
+- [async-stacktrace](https://github.com/Pita/async-stacktrace) has greatly inspired this module, but it does more than just adding trace stamps (throw errors, call callbacks and conditionally create Error objects).
 
 ## Notes
 This module can also be used when handling errors with promises.
