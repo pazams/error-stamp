@@ -1,11 +1,11 @@
-var stamp = require(".");
+var stamp = require("..");
 
 function aSync1(callback) {
     setTimeout(function () { 
         aSync2(function(err)
                {
-                   if(stamp(err)) {
-                       callback(err);
+                   if(err) {
+                       callback(stamp(err));
                        return;
                    }   
 
@@ -19,8 +19,8 @@ function aSync2(callback) {
     setTimeout(function () { 
         aSyncLast(function(err)
                   {
-                      if(stamp(err)) {
-                          callback(err);
+                      if(err) {
+                          callback(stamp(err));
                           return;
                       }   
 

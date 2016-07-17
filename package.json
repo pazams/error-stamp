@@ -1,6 +1,6 @@
 {
   "name": "error-stamp",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Mutate an Error object to include a stamp of current step",
   "main": "index.js",
   "directories": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha test/",
-    "document": "jsdox index.js --output documentation/"
+    "document": "jsdoc2md index.js > documentation/index.md"
   },
   "repository": {
     "type": "git",

@@ -43,12 +43,12 @@ if(err) {
 ### Before using the module
 `node examples/example.js`
 ```bash
-/tmp/error-stamp/example.js:40
+/tmp/error-stamp/examples/example.js:42
         throw err;
         ^
 
 Error
-    at null._onTimeout (/tmp/error-stamp/example.js:33:18)
+    at null._onTimeout (/tmp/error-stamp/examples/example.js:35:18)
     at Timer.listOnTimeout (timers.js:89:15)
 ```
 
@@ -56,36 +56,40 @@ Error
 ### After using the module
 `node examples/example_withstamps.js`
 ```bash
-/tmp/error-stamp/example_withstamps.js:42
+/tmp/error-stamp/examples/example_withstamps.js:42
         throw err;
         ^
 
 Error
-    at ErrStamp /tmp/error-stamp/example_withstamps.js:7:23
-    at ErrStamp /tmp/error-stamp/example_withstamps.js:22:26
-    at null._onTimeout (/tmp/error-stamp/example_withstamps.js:35:18)
+    at ErrStamp /tmp/error-stamp/examples/example_withstamps.js:8:33
+    at ErrStamp /tmp/error-stamp/examples/example_withstamps.js:23:36
+    at null._onTimeout (/tmp/error-stamp/examples/example_withstamps.js:35:18)
     at Timer.listOnTimeout (timers.js:89:15)
 ```
 
 ## API
+<a name="errorStamp"></a>
 
-
-### errorStamp(err) 
-
+## errorStamp(err, [msg])
 Mutate an Error object to include a stamp of current step.
 
-**Parameters**
+**Kind**: global function  
 
-**err**: `Error`, an object that inherits from Error.prototype
+| Param | Type | Description |
+| --- | --- | --- |
+| err | <code>Error</code> | An object that inherits from Error.prototype . |
+| [msg] | <code>string</code> | Optional. A message to add with the stamp. |
 
+<a name="errorStamp.setErrorPrefix"></a>
 
-### errorStamp.setErrorPrefix(value) 
-
+### errorStamp.setErrorPrefix(value)
 Sets the error prefix used in each new line added to the trace. Default is "ErrStamp"
 
-**Parameters**
+**Kind**: static method of <code>[errorStamp](#errorStamp)</code>  
 
-**value**: `string`, the value to set
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> | The value to set |
 
 
 ## Alternatives
