@@ -2,9 +2,10 @@ var errorPrefix = "ErrStamp";
 
 /**
  * Mutate an Error object to include a stamp of current step.
- * @param {Error} err an object that inherits from Error.prototype
+ * @param {Error} err An object that inherits from Error.prototype .
+ * @param {string} [msg] Optional. A message to add with the stamp.
  */
-function errorStamp(err)
+function errorStamp(err, msg)
 {
 
     //if there is an error object, "push" to its stack the current trace
@@ -14,7 +15,9 @@ function errorStamp(err)
 
         var currentTrace = new Error().stack.split("\n")[2];
 
-        var newStackLine = errorPrefix ? currentTrace.replace('at', 'at '+errorPrefix) : currentTrace;
+        var currentTraceMessage = msg ? currentTrace.replace('at', 'at '+msg) : currentTrace;
+
+        var newStackLine = errorPrefix ? currentTraceMessage.replace('at', 'at '+errorPrefix) : currentTraceMessage;
 
         stackLines.splice(1,0,newStackLine);
 
@@ -28,7 +31,7 @@ function errorStamp(err)
 
 /**
  * Sets the error prefix used in each new line added to the trace. Default is "ErrStamp"
- * @param {string} value the value to set
+ * @param {string} value The value to set
  */
 errorStamp.setErrorPrefix = function(value){
     errorPrefix = value;

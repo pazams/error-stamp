@@ -42,7 +42,7 @@ describe('error-stamp', function() {
 
         });
 
-        it('always returns the input value or reference- i.e an identify function', function() {
+        it('always returns the input value or reference- i.e an identity function', function() {
 
             var possibleInputs = [1,"2",true,null,undefined,{}];
 
@@ -74,6 +74,19 @@ describe('error-stamp', function() {
 
         });
 
+        it('adds the optional message', function() {
+
+            stamp.setErrorPrefix('foo');
+
+            var err = new Error();
+
+            stamp(err,'bookApiFacade');
+
+            var customMessageIndex = err.stack.split("\n")[1].indexOf('bookApiFacade');
+
+            assert.notEqual(customMessageIndex, -1);
+
+        });
 
         it('operates on Error types that inherit from Error prototype', function() {
 
