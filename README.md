@@ -1,7 +1,7 @@
 # error-stamp
 [![Build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
-[![Downloads][downloads-image]][downloads-url]
+[![Downloads][downloads-image]][downloads-url] 
 
 Mutate a JS error object to include a stamp of current step.
 
