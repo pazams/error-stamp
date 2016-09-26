@@ -1,8 +1,17 @@
-# error-stamp [![Build Status][ci-img]][ci]
+# error-stamp
+[![Build status][travis-image]][travis-url]
+[![Test coverage][coveralls-image]][coveralls-url]
+[![Downloads][downloads-image]][downloads-url]
+
 Mutate a JS error object to include a stamp of current step.
 
-[ci-img]:  https://travis-ci.org/pazams/error-stamp.svg
-[ci]:      https://travis-ci.org/pazams/error-stamp
+[travis-image]: https://img.shields.io/travis/pazams/error-stamp.svg?style=flat-square
+[travis-url]: https://travis-ci.org/pazams/error-stamp
+[coveralls-image]: https://img.shields.io/coveralls/pazams/error-stamp.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/pazams/error-stamp
+[downloads-image]: https://img.shields.io/npm/dm/error-stamp.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/error-stamp
+
 
 ## Why 
 The main motivation for this module is for using [Node.JS style callbacks](https://nodejs.org/api/errors.html#errors_node_js_style_callbacks). When passing the Error object, it contains the details of the sync call, but loses track of all async coming after. 
