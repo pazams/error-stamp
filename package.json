@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha test/",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -u exports test/*",
     "document": "jsdoc2md index.js > documentation/index.md"
   },
   "repository": {
@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/pazams/error-stamp#readme",
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "mocha": "^2.5.3"
   }
 }
